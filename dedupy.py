@@ -39,4 +39,15 @@ def hash_files(path):
 
     return file_hash_dict
 
-hash_files("/home/alexander/Documents/")
+def main(arg):
+    if len(arg) < 2:
+        return print("No path given")
+    elif len(arg) > 2:
+        return print("Too many arguments give, expected one")
+    elif arg[1] == '-h' or arg[1] == '--help':
+        return print("dedupy.py will hash all the files in a given path and subpaths")
+    elif not os.path.isdir(arg):
+        return print("Argument given is not a valid path")
+    hash_files(arg[1])
+
+main(os.sys.argv)
