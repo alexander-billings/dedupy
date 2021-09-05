@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 import os, hashlib
 
 # Currently errors on denied permissions
@@ -34,6 +34,9 @@ def hash_files(path):
     for file_path, file_hash in file_hash_dict.items():
         print("{} is the hash of {}".format(file_hash, file_path))
 
+    for path in path_list:
+        hash_files(path)
+
     return file_hash_dict
 
-hash_files("/bin/")
+hash_files("/home/alexander/Documents/")
