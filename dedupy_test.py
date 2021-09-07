@@ -1,8 +1,14 @@
 #!/usr/bin/python3
-import unittest
+import unittest, os
+from unittest.case import expectedFailure
 from dedupy import hash_files
 
 class HashFilesTest(unittest.TestCase):
+    def test_hash_cwd(self):
+        testcase = os.getcwd()
+        filename = os.path.join(os.getcwd(), 'LICENSE')
+        filehash = '699ed8746dab368dca7e872aaad14dbb'
+        self.assertEqual(hash_files(testcase)[filename], filehash)
     def test_no_path(self):
         testcase = None
         expected = "No path given"
