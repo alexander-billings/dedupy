@@ -50,4 +50,5 @@ def main(arg):
         return print("Argument given is not a valid path")
     hash_files(arg[1])
 
-main(os.sys.argv)
+if __name__ == '__main__':
+  main(os.sys.argv)
