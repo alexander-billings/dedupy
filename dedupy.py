@@ -10,9 +10,9 @@ def hash_files(path):
 
     hasher = hashlib.md5()
 
-    if path == None:
+    if path is None:
         return "No path given"
-    elif os.path.isdir(path) == False:
+    elif os.path.isdir(path) is False:
         return "Invalid path"
 
     path_list = []
