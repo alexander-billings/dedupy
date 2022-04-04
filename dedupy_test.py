@@ -7,7 +7,7 @@ class HashFilesTest(unittest.TestCase):
     def test_hash_cwd(self):
         testcase = os.getcwd()
         filename = os.path.join(os.getcwd(), 'LICENSE')
-        filehash = '699ed8746dab368dca7e872aaad14dbb'
+        filehash = '1ebbd3e34237af26da5dc08a4e440464'
         self.assertEqual(hash_files(testcase)[filename], filehash)
     def test_no_path(self):
         testcase = None
