@@ -24,7 +24,6 @@ def hash_files(path):
     for file in files:
 
         full_path = os.path.join(path, file)
-        
         if os.path.islink(full_path):
             symlink_list.append(full_path)
         elif os.path.isdir(full_path):
@@ -45,12 +44,14 @@ def hash_files(path):
 
     return file_hash_dict
 
+
 def main(arg):
-    #if arg[1] == '-h' or arg[1] == '--help' or len(arg) > 2:
+    # if arg[1] == '-h' or arg[1] == '--help' or len(arg) > 2:
     if not len(arg) == 2:
         return print("dedupy.py will hash all the files in a given path and subpaths")
     result = hash_files(arg[1])
     print(result)
+
 
 if __name__ == '__main__':
     main(os.sys.argv)
