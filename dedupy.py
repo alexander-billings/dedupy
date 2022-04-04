@@ -1,5 +1,8 @@
-#!/usr/bin/python3
-import os, hashlib
+#!/usr/bin/env python3
+import os
+import hashlib
+import shutil
+
 
 # Currently errors on denied permissions
 def hash_files(path):
@@ -50,4 +53,4 @@ def main(arg):
     print(result)
 
 if __name__ == '__main__':
-  main(os.sys.argv)
+    main(os.sys.argv)
